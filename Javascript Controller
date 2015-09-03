@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<body>
+      <script src="http://cdn.pubnub.com/pubnub-3.7.14.min.js"></script>
+<input type="button" name="Forward" value="Forward" style="position: absolute; left: 605px; top: 150px; width:120px; height:70px;" onClick=toggleForward() />
+<p id="F"></p>
+
+<input type="button" name="Backward" value="Backward" style="position: absolute; left: 605px; top: 320px; width:120px; height:70px;" onClick=toggleBackward() />
+<p id="B"></p>
+
+<input type="button" name="Left" value="Left" style="position: absolute; left: 490px; top: 235px; width:110px; height:70px;" onClick=toggleLeft() />
+<p id="L"></p>
+
+<input type="button" name="Right" value="Right" style="position: absolute; left: 730px; top: 235px; width:110px; height:70px;" onClick=toggleRight() />
+<p id="R"></p>
+
+<input type="button" name="Stop" value="Stop" style="position: absolute; left: 615px; top: 235px; width:100px; height:70px;" onClick=toggleStop() />
+<p id="S"></p>
+
+<input type="button" name="Kill" value="Kill" style="position: absolute; left: 1300px; top: 235px; width:110px; height:70px;" onClick=toggleKill() />
+<p id="K"></p>
+
+<iframe
+    style="position: absolute; left: 900px; top: 125px; height: 300px;width: 300px;"
+    src="IP OF WEBCAM">
+</iframe>
+
+</body>
+</html>
+
+<script>
+function toggleForward() {
+    pubmsg = { "req" : "forward" };
+    pubnub.publish(
+                        { 
+                            channel : 'gpio-raspberry-control' ,
+                            message :  pubmsg
+                            
+                        }
+                        
+                    );
+}
+</script>
+<script>
+function toggleBackward() {
+    pubmsg = { "req" : "backward" };
+    pubnub.publish(
+                        { 
+                            channel : 'gpio-raspberry-control' ,
+                            message :  pubmsg
+                            
+                        }
+                        
+                    );
+}
+</script>
+<script>
+function toggleLeft() {
+    pubmsg = { "req" : "left" };
+    pubnub.publish(
+                        { 
+                            channel : 'gpio-raspberry-control' ,
+                            message :  pubmsg
+                            
+                        }
+                        
+                    );
+}
+</script>
+<script>
+function toggleRight() {
+    pubmsg = { "req" : "right" };
+    pubnub.publish(
+                        { 
+                            channel : 'gpio-raspberry-control' ,
+                            message :  pubmsg
+                            
+                        }
+                        
+                    );
+}
+</script>
+<script>
+function toggleStop() {
+    pubmsg = { "req" : "stop" };
+    pubnub.publish(
+                        { 
+                            channel : 'gpio-raspberry-control' ,
+                            message :  pubmsg
+                            
+                        }
+                        
+                    );
+}
+</script>
+<script>
+function toggleKill() {
+    pubmsg = { "req" : "kill" };
+    pubnub.publish(
+                        { 
+                            channel : 'gpio-raspberry-control' ,
+                            message :  pubmsg
+                            
+                        }
+                        
+                    );
+}
+</script>
+        <script type="text/javascript">
+            
+            var pubnub = PUBNUB.init({
+                publish_key: 'YOURKEYHERE',
+                subscribe_key: 'YOURKEYHERE',
+                uuid: 'ID'
+            });
+            
+            pubnub.subscribe({
+                channel: 'gpio-raspberry-control',
+                presence: function(m){console.log(m)},
+                message: function(m){console.log(m)}
+                
+            });
+
+            pubnub.here_now({
+               channel : 'gpio-raspberry-control',
+               callback : function(m){console.log(m)}
+            });
+            
+</script>
