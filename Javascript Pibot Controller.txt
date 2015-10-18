@@ -22,8 +22,28 @@
 
 <iframe
     style="position: absolute; left: 900px; top: 125px; height: 300px;width: 300px;"
-    src="IP OF WEBCAM">
+    src="http://192.168.1.77">
 </iframe>
+<img
+    src="http://192.168.1.77">
+</img>
+
+
+<!--<script>
+    var count = 1;
+    function setColor(btn) {
+        var property = document.getElementById(btn);
+        if (count == 0) {
+            property.style.backgroundColor = "#FFFFFF"
+            count = 1;        
+        }
+        else {
+            property.style.backgroundColor = "#7FFF00"
+            count = 0;
+        }
+    }
+</script>-->
+<p id="demo"></p>
 
 </body>
 </html>
@@ -109,9 +129,9 @@ function toggleKill() {
         <script type="text/javascript">
             
             var pubnub = PUBNUB.init({
-                publish_key: 'YOURKEYHERE',
-                subscribe_key: 'YOURKEYHERE',
-                uuid: 'ID'
+                publish_key: 'pub-c-b72e8d8e-4e01-4896-ae5a-ad671c84ebc2',
+                subscribe_key: 'sub-c-74baf600-439b-11e5-a9f1-02ee2ddab7fe',
+                uuid: '2468'
             });
             
             pubnub.subscribe({

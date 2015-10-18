@@ -12,7 +12,7 @@ except RuntimeError:
 GPIO.setmode(GPIO.BOARD)
 
 #Setup PubNub
-pubnub = Pubnub(publish_key="PUBLISHKEY",subscribe_key="SUBSCRIBEKEY")
+pubnub = Pubnub(publish_key="pub-c-b72e8d8e-4e01-4896-ae5a-ad671c84ebc2",subscribe_key="sub-c-74baf600-439b-11e5-a9f1-02ee2ddab7fe")
 pubnubChannelName = 'gpio-raspberry-control'
 
 
